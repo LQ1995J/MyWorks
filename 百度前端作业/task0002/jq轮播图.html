@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery轮播图</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <!--<script src="js/jqIdex.js"></script>-->
+  <script>
+    $(function () {
+      var c = 0; // 图号
+
+// 定时器调用的函数
+      function run() {
+        c++;
+        c = c == 4 ? 0 : c;
+        // 让c号图片显示，兄弟图片隐藏
+        $("#box img").eq(c).fadeIn(300).siblings("img").fadeOut(300);
+        // 让c号li变红，兄弟li变灰
+        $("#box ul li").eq(c).css("background-color", "#A10000").siblings("li").css("background-color", "#DDDDDD");
+      }
+
+      // 设置定时器，控制自动轮播
+      var timer = setInterval(run, 1000);
+
+      $("#box").hover(function () {
+        // 鼠标移入，清理定时器
+        clearInterval(timer);
+      }, function () { // 鼠标移出，设置定时器，控制自动轮播
+        timer = setInterval(run, 1000);
+      });
+
+      // 鼠标移入小圆点的效果
+      $("#box ul li").mouseenter(function () {
+        var th = $(this);
+        timer = setTimeout(function () {
+          c = th.index();
+          c = $(this).index();
+          // 直接使用stop，会立即停止当前正在进行的动画，以当前的状态开始接下来的动画
+          $("#box img").eq(c).stop().fadeIn(300).siblings("img").stop().fadeOut(300);
+          // 让c号li变红，兄弟li变灰
+          $("#box ul li").eq(c).css("background-color", "#A10000").siblings("li").css("background-color", "#DDDDDD");
+        }, 300)
+//
+      });
+      // 鼠标移出小圆点的效果
+      $("#box ul li").mouseleave(function () {
+        clearTimeout(timer);
+      });
+
+      $("#prev").click(function () {
+        c--;
+        c = c == -1 ? 3 : c;
+        // 让c号图片显示，兄弟图片隐藏
+        $("#box img").eq(c).fadeIn(300).siblings("img").fadeOut(300);
+        // 让c号li变红，兄弟li变灰
+        $("#box ul li").eq(c).css("background-color", "#A10000").siblings("li").css("background-color", "#DDDDDD");
+
+      });
+
+      $("#next").click(function () {
+        c++;
+        c = c == 4 ? 0 : c;
+        // 让c号图片显示，兄弟图片隐藏
+        $("#box img").eq(c).fadeIn(300).siblings("img").fadeOut(300);
+        // 让c号li变红，兄弟li变灰
+        $("#box ul li").eq(c).css("background-color", "#A10000").siblings("li").css("background-color", "#DDDDDD");
+
+      })
+    })
+  </script>
+
+</head>
+<body>
+<div id="box">
+  <img src="img/01.jpg" style="display: block;">
+  <img src="img/02.jpg">
+  <img src="img/03.jpg">
+  <img src="img/04.jpg">
+  <ul>
+    <li style="background-color: #A10000"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <li id="prev" class="arrow">&lt;</li>
+  <li id="next" class="arrow">&gt;</li>
+</div>
+<p>联系一下</p>
+</body>
+</html>

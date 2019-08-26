@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>blog</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <style>
+    #content {
+      margin: 10px 120px;
+    }
+
+    #content:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    #main {
+      float: left;
+      width: 730px;
+      line-height: 120%;
+    }
+
+    .maside {
+      float: left;
+      margin-left: -70px;
+      margin-top: 16px;
+      color: white;
+      font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+      text-align: center;
+    }
+
+    .mup, .mdown {
+      padding: 10px 0px;
+      width: 55px;
+      font-size: 12px;
+    }
+
+    .mup {
+      background-color: #522A5C;
+    }
+
+    .mdown {
+      background-color: #A660B7;
+    }
+
+    .art {
+      padding: 10px 15px;
+      background-color: white;
+    }
+
+    .sec, .thr {
+      margin-top: 15px;
+    }
+
+    h1 {
+      font-size: 16px;
+      color: #A660B7;
+    }
+
+    h2 {
+      font-size: 12px;
+      color: #666;
+    }
+
+    p {
+      font-size: 12px;
+      text-indent: 24px;
+    }
+
+    .afoot {
+      font-size: 12px;
+      color: #898989;
+      text-align: right;
+    }
+
+    #apage {
+      margin: 15px 60px 50px 60px;;
+      font-size: 12px;
+    }
+
+    .apa {
+      margin-left: 15px;
+    }
+
+    .afir, .apa {
+      float: left;
+      padding: 5px 15px;
+      background-color: white;
+      margin-bottom: 100px;
+    }
+
+    #side {
+      margin-left: 740px;
+      width: 240px;
+    }
+
+    #ssearch {
+      padding: 20px;
+      background-color: white;
+    }
+
+    #inp {
+      height: 34px;
+      padding-left: 40px;
+      border: 1px solid #DDDDDD;
+      background: url(img/search.png) 3px center no-repeat;
+      background-size: 29px 29px;
+      width: 75%;
+      font-family: Baskerville;
+    }
+
+    #go {
+      float: right;
+      padding: 6px 0px;
+      background-color: #DDDDDD;
+      width: 25%;
+      color: white;
+      text-align: center;
+      font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    }
+
+    #spage, #scalender, #stages {
+      margin-top: 15px;
+      font-size: 12px;
+      background-color: white;
+    }
+
+    #scalender {
+      padding-bottom: 25px;
+    }
+
+    .ssp {
+      border-bottom: 1px solid #DDDDDD;
+      padding: 15px 20px;
+      border-left: 3px solid #D6B7DE;
+      padding: 15px 20px;
+    }
+
+    .ssp:hover {
+      border-left: 3px solid #522A5C;
+    }
+
+    .month {
+      padding: 15px 20px;
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+      height: 15px;
+    }
+
+    .month ul li {
+      color: #522A5C;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .month .cprev, .cdate, .cyear, .cmonth {
+      float: left;
+    }
+
+    .month .cdate {
+      margin: 2px 44px;
+    }
+
+    .month .cnext {
+      float: right;
+    }
+
+    .weekdays {
+      padding: 0px 20px;
+      color: #878787;
+    }
+
+    .weekdays ul {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #E4E4E4;
+    }
+
+    .weekdays ul li {
+      display: inline-block;
+      width: 11.4%;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+
+    .day {
+      padding: 0px 20px;
+      color: #878787;
+    }
+
+    .day ul {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #E4E4E4;
+    }
+
+    .day ul li {
+      display: inline-block;
+      width: 11.4%;
+      text-align: center;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-bottom: 3px;
+      padding-top: 3px;
+    }
+
+    .day ul li:hover {
+      background-color: #522A5C;
+      color: white;
+    }
+
+    #stages {
+      padding: 10px 20px 30px 20px;
+      font-size: 12px;
+      font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    }
+
+    #stages a {
+      text-decoration: none;
+    }
+
+    #stages a:hover {
+      text-decoration: underline;
+      color: #B772BF;
+    }
+
+    #stages .tages {
+      margin-bottom: 13px;
+    }
+
+    #stages .big a {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #stages .mid a {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #stages .small a {
+      font-size: 14px;
+    }
+
+    #stages .stf a {
+      margin-top: 5px;
+      color: #773C88;
+    }
+
+  </style>
+  <script>
+    function acti() {
+      var inp = document.getElementById("inp");
+      if (inp.focus) {
+        var goColor = document.getElementById("go");
+        goColor.style.backgroundColor = "gray";
+      }
+    }
+
+    function gblur() {
+      if (inp.blur) {
+        var goColor = document.getElementById("go");
+        goColor.style.backgroundColor = "#DDDDDD";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<header>
+  <div id="yourlogo">YourLOGO</div>
+  <a href="https://github.com/baidu-ife/ife/tree/master/2015_spring/task/task0001"><img id="github_icon"
+                                                                                        src="img/github_icon.png"></a>
+  <div id="lin">
+    <a href="index.html" class="al">首页</a>
+    <a href="blog.html" class="al">文章</a>
+    <a href="galley.html" class="al">作品</a>
+    <a href="about.html" class="aa">关于</a>
+  </div>
+</header>
+<section id="content">
+  <article id="main">
+    <div class="art fir">
+      <div class="maside">
+        <div class="mup">4.15</div>
+        <div class="mdown">CSS</div>
+      </div>
+      <h1>这里是这篇文章的标题，16px</h1>
+      <h2>这里是这篇文章的副标题，12px，#666</h2>
+      <p>
+        绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。</p>
+      <div class="afoot">Trancy 发表于 2019年4月16日</div>
+
+    </div>
+    <div class="art sec">
+      <div class="maside">
+        <div class="mup">4.15</div>
+        <div class="mdown">CSS</div>
+      </div>
+      <h1>这里是这篇文章的标题，16px</h1>
+      <h2>这里是这篇文章的副标题，12px，#666</h2>
+      <p>
+        绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。</p>
+      <div class="afoot">Trancy 发表于 2019年4月16日</div>
+    </div>
+    <div class="art thr">
+      <div class="maside">
+        <div class="mup">4.15</div>
+        <div class="mdown">CSS</div>
+      </div>
+      <h1>这里是这篇文章的标题，16px</h1>
+      <h2>这里是这篇文章的副标题，12px，#666</h2>
+      <p>
+        绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。绿谷出久；英雄名：人偶。日本漫画《我的英雄学院》及其衍生作品中的男主角。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。在80%的人都拥有“个性”的未来，天生无“个性”的他立志要成为英雄。在继承欧尔麦特的“个性”之后，终于考进了雄英高中。</p>
+      <div class="afoot">Trancy 发表于 2019年4月16日</div>
+    </div>
+    <div id="apage">
+      <div class="afir">第一页</div>
+      <div class="apa">上一页</div>
+      <div class="apa">1</div>
+      <div class="apa">2</div>
+      <div class="apa">3</div>
+      <div class="apa">4</div>
+      <div class="apa">...</div>
+      <div class="apa">下一页</div>
+      <div class="apa">最后页</div>
+    </div>
+  </article>
+  <aside id="side">
+    <div id="ssearch">
+      <input type="search" id="inp" size="18px" placeholder="Keywords" onFocus="acti()" onBlur="gblur()">
+      <div id="go">GO</div>
+    </div>
+    <div id="spage">
+      <div class="ssp">HTML</div>
+      <div class="ssp">CSS</div>
+      <div class="ssp">Javascript</div>
+      <div class="ssp">其他文章</div>
+    </div>
+    <div id="scalender">
+      <div class="month">
+        <ul class="scul">
+          <li class="cprev">❮</li>
+          <div class="cdate">
+            <li class="cyear">2019.</li>
+            <li class="cmonth">April</li>
+          </div>
+          <li class="cnext">❯</li>
+        </ul>
+      </div>
+      <div class="weekdays">
+        <ul>
+          <li>M</li>
+          <li>T</li>
+          <li>W</li>
+          <li>T</li>
+          <li>F</li>
+          <li>S</li>
+          <li>S</li>
+        </ul>
+      </div>
+      <div class="day">
+        <ul class="days">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+        </ul>
+        <ul class="days">
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+        </ul>
+        <ul class="days">
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+        </ul>
+        <ul class="days">
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+        </ul>
+        <ul class="days">
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+        </ul>
+      </div>
+    </div>
+    <div id="stages">
+      <div class="tages">Tages</div>
+      <div class="stf t"><span class="big"><a href="#">JavaScript</a></span><span class="mid"><a
+        href="#"> CSS</a></span><a href="#"> flex</a></div>
+      <div class="stf"><a href="#">WebGL </a><span class="big"><a href="#">HTML</a></span><span class="small"><a
+        href="#"> Canvans</a></span></div>
+      <div class="stf"><span class="small"><a href="#">prototype</a></span><span class="mid"><a
+        href="#"> HTML5</a></span><a href="#"> flex</a><span class="small"><a href="#"> nodeJS</a></span></div>
+      <div class="stf"><span class="small"><a href="#">CSS3</a></span><span class="mid"><a
+        href="#"> jQuery</a></span><span class="mid"><a href="#"> ECharts</a></span></div>
+    </div>
+  </aside>
+</section>
+<footer>
+  <div class="fter_titl">
+    <a href="index.html" class="al">首页</a>
+    <a href="blog.html" class="al">文章</a>
+    <a href="galley.html" class="al">作品</a>
+    <a href="about.html" class="aa">关于</a>
+  </div>
+  <div id="fter_link">
+    <div class="fter_hd fir">
+      <ul>
+        <li class="ft">学习资料</li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a class="hov">Hover时样式</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+      </ul>
+    </div>
+
+    <div class="fter_hd sec">
+      <ul>
+        <li class="ft">友情链接</li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a class="hov">Hover时样式</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+      </ul>
+    </div>
+    <div class="fter_hd thi">
+      <ul>
+        <li class="ft">学习资料</li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a class="hov">Hover时样式</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+      </ul>
+    </div>
+    <div class="fter_hd for">
+      <ul>
+        <li class="ft">友情链接</li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a class="hov">Hover时样式</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+      </ul>
+    </div>
+    <div class="fter_hd fif">
+      <ul>
+        <li class="ft">学习资料</li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a class="hov">Hover时样式</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+        <li class="fl"><a href="#">LINK</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="copyr">版权信息</div>
+  <div class="ficon"><a href="https://github.com/baidu-ife/ife/tree/master/2015_spring/task/task0001"><img id="ficon"
+                                                                                                           src="img/github_icon.png"></a>
+  </div>
+</footer>
+</body>
+</html>

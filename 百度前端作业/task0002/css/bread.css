@@ -1,0 +1,259 @@
+body {
+    background: linear-gradient(to top, #FF6B89, #FE6986)
+}
+
+.wrapper {
+    width: 370px;
+    height: 240px;
+    position: absolute;
+    top: calc(50% - 120px);
+    left: calc(50% - 185px);
+}
+
+.shadow {
+    width: 440px;
+    height: 20px;
+    background: #FD5374;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: -35px;
+
+}
+
+.toaster {
+    animation: shaking 8s ease infinite;
+}
+
+/*面包机主体部分*/
+.toaster-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.toaster-body-main {
+    width: 344px;
+    height: 175px;
+    background: #F62A41;
+    box-shadow: 77px 0 0 inset #c20049;
+    border-radius: 30px 30px 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*烤面包机开关条部分*/
+.toaster-body-switch {
+    width: 57px;
+    height: 123px;
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    animation: switch 8s ease infinite;
+}
+
+.toaster-body-switch .hole {
+    width: 14px;
+    height: 107px;
+    background: #9c0749;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left: 17px;
+}
+
+/*手杆部分*/
+.toaster-body-switch .hole::after {
+    content: '';
+    width: 10px;
+    position: absolute;
+    left: 8px;
+    top: 2px;
+    bottom: 1px;
+    background: #2b3335;
+    border-radius: 10px;
+}
+
+/*手柄部分*/
+.toaster-body-switch .handler {
+    width: 39px;
+    height: 20px;
+    background: #f0c4df;
+    border-radius: 4px;
+    position: absolute;
+    top: 85px;
+    left: 6px;
+    box-shadow: 6px 0 0 #cc98b8;
+    animation: handler 8s ease infinite;
+}
+
+/*脸部表情*/
+.toaster-body-face {
+    position: relative;
+    width: 221px;
+    height: 137px;
+    left: 90px;
+}
+
+/*开心的表情*/
+.toaster-happy {
+    width: 221px;
+    height: 137px;
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    animation: face-happy 8s ease infinite;
+}
+
+/*开心的眼白*/
+.toaster-happy .eyes {
+    width: 32px;
+    height: 67px;
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 9px;
+    animation: eyes 8s ease infinite;
+}
+
+/*开心的眼珠*/
+.toaster-happy .eyes::after {
+    content: '';
+    width: 17px;
+    height: 45px;
+    background: #2b3335;
+    border-radius: 10px;
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    /*左眼珠的中心点固执*/
+    transform-origin: left center;
+    animation: pupil 8s ease infinite;
+}
+
+.toaster-happy .eyes-left {
+    left: 19px;
+}
+
+.toaster-happy .eyes-right {
+    right: 19px;
+}
+
+.toaster-happy .mouth_h {
+    width: 100px;
+    height: 50px;
+    background: url(http://www.zhufengquanzhan.com/bread/images/mouth_h.png) no-repeat;
+    position: absolute;
+    top: 83px;
+    left: 65px;
+}
+
+/*紧张的表情*/
+.toaster-tense {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 25px;
+    top: 35px;
+    animation: face-tense 8s ease infinite;
+}
+
+.toaster-tense .eyes {
+    height: 90px;
+    left: 0;
+    right: 0;
+    background: url(http://www.zhufengquanzhan.com/bread/images/eyes.png) no-repeat;
+}
+
+.toaster-tense .mouth_t {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    margin: auto;
+    background: url(http://www.zhufengquanzhan.com/bread/images/mouth_t.png) no-repeat;
+}
+
+/*脸红*/
+.toaster-plush {
+    position: relative;
+    height: 30px;
+    top: 110px;
+    left: 26px;
+    right: 0;
+    margin: auto;
+    animation: blush 8s ease infinite;
+}
+
+.plush-left, .plush-right {
+    width: 37px;
+    height: 17px;
+    background: #c50b22;
+    border-radius: 100%;
+    position: absolute;
+    top: 8px;
+}
+
+.plush-left {
+    left: 8px;
+}
+
+.plush-right {
+    right: 8px;
+}
+
+/*进度条*/
+.toaster-bottom {
+    position: relative;
+    top: 145px;
+}
+
+.progress {
+    width: 372px;
+    height: 25px;
+    background: #FFFFFF;
+    position: absolute;
+    border-radius: 10px;
+    top: 30px;
+    left: 0;
+}
+
+.progress::after {
+    content: '';
+    width: 125px;
+    height: 100%;
+    background: #afafbf;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.legs {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+
+.legs-left, .legs-right {
+    width: 69px;
+    height: 22px;
+    background: #000;
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+}
+
+.legs-left {
+    left: 20px;
+}
+
+.legs-right {
+    right: 20px;
+}

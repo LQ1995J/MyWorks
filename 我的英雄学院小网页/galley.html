@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>galley</title>
+<link rel="stylesheet" href="../css/common.css"> 
+<style>
+	#content{margin:10px 120px;}
+	#content:after{content: ""; display: block; clear: both;}
+	#main{float: left;width: 730px; line-height: 120%;}
+	.mtab{display: inline-block; font-size:14px;}
+	.tab01{border-top: 4px solid #005B00;} .tab02{border-top: 4px solid #694772;} .tab03{border-top: 4px solid #7C0FBF;} .tab04{border-top: 4px solid #8C2300;} .tab05{border-top: 4px solid #D9A300;}
+	.mmnav{float:left; padding: 15px 20px 20px 20px; margin-right: 1px; background-color: white;}
+	.mmnav:hover{border-top: 4px solid #DEA4BA;}
+			
+	.mfull{padding:18px 20px 50px 20px; background-color: white; margin-top: -4px;}
+	.mfull:after{content: ""; display: block; clear: both;}
+	.mfuleft{width: 340px; float: left;}
+	.mfuright{width: 340px; float: right;}
+	.mi{width:100%;}
+	.m01t{background-color:#8C2300; color:white; padding: 5px 10px 10px 10px;width:320px; margin-top: -5px;}
+	.serialnum{float:left; border:1px solid #FFFFFF; font-size:15px; border-radius: 50%; padding: 4px 10px; margin-top: 8px;}
+	.h1{margin-left: 40px; font-size: 16px; line-height: 200%;}
+	.p{margin-left: 40px; font-size: 14px; margin-bottom: 5px; }
+	
+	.b1{margin-bottom: 15px;}
+	.b2,.b3{width:165px;}
+	.b2{float:left;} .b3{float:right;}
+	.mf{color:white; padding: 5px 10px 10px 10px;width:145px;margin-top: -5px;margin-bottom: 15px;}
+	.mf2{background-color:#D9A300;}.mf3{background-color:#522A5C;}.mf4{background-color:#CE7597}.mf5{background-color:#8C2300}
+	
+	.mmore{margin-top: 10px; background-color:white;padding:15px;margin-bottom: 60px;}
+	#arrow{width:25px;float:left;}
+	.momid{margin: 0 auto;width:121px;font-size:14px;color:#8A8A8A;text-indent: 10px;}
+	.mmore a{text-decoration: none;}
+	
+	#side{margin-left: 740px; width: 240px;}
+	#ssearch{padding: 20px;background-color: white;}
+	#inp{height:34px;padding-left: 40px; border: 1px solid #DDDDDD; background: url(img/search.png) 3px center no-repeat;background-size:29px 29px;width:75%;font-family:Baskerville;}
+	#go{float:right;padding: 6px 0px;background-color: #DDDDDD;width: 25%;color: white; text-align: center;font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"; }
+	
+	.srank{background-color:#FFF;margin-top:10px;padding:20px 10px;}
+	.srtit{font-size:15px;color:#8A8A8A;font-family: "Microsoft JhengHei" ;}
+	.scharts{margin-top:20px;font-family:"Gill Sans MT", "Myriad Pro", Arial, "sans-serif"; height: 160px;}
+	.sch{margin-bottom:10px; height: 20px;}
+	.schn{border-radius: 50px;font-size:13px;background-color:#522A5C;width:18px;text-align: center;color:#FFF; padding:2px 1px 2px 1px;float: left;}
+	.schbar{width:90px;height:17px;margin-left: 10px;float: left;border:1px solid ;border:1px solid #522A5C;}
+	.sbarlef{background-color: #522A5C;float: left;height:17px;}
+	.srkname{margin-left: 10px;float: left;}
+	
+	#barlef1{width:100%;}
+	#barlef2{width:90%;}
+	#barlef3{width:70%;}
+	#barlef4{width:40%;}
+	#barlef5{width:30%;}
+</style>
+	<script>
+		function acti(){
+			var inp = document.getElementById("inp");
+			if(inp.focus)
+			{
+				var goColor=document.getElementById("go");
+				goColor.style.backgroundColor = "gray";
+			}
+		}
+		function gblur(){
+			if(inp.blur)
+			{
+				var goColor=document.getElementById("go");
+				goColor.style.backgroundColor = "#DDDDDD";
+			}
+		}
+	</script>
+</head>
+
+<body>
+<header>
+	  <div id="yourlogo">YourLOGO</div>
+	  <a href="https://github.com/baidu-ife/ife/tree/master/2015_spring/task/task0001"><img id="github_icon" src="img/github_icon.png"></a>
+	  <div id="lin">
+			<a href="index.html" class="al">首页</a>
+			<a href="blog.html" class="al">文章</a>
+			<a href="galley.html" class="al">作品</a>
+			<a href="about.html" class="aa">关于</a>
+	  </div>
+</header>
+<section id="content">
+	<article id="main">	
+		<div class="mtab">
+			<div class="mmnav tab01">ALL</div>
+			<div class="mmnav tab02">JavaScript Util Functions</div>
+			<div class="mmnav tab03">UI Components</div>
+			<div class="mmnav tab04">Framework</div>
+			<div class="mmnav tab05">Application</div>
+		</div>
+		<div class="mfull">
+			
+			<div class="mfuleft">
+				<div class="b1">
+					<img src="img/m01.jpeg" class="mi">
+					<div class="mi m01t">
+						<div class="serialnum">A</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>
+					</div>
+				</div>				
+				<div class="b2">
+					<img src="img/m02.jpg" class="mi">
+					<div class="mi mf mf2">
+						<div class="serialnum">J</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>
+					</div>
+					
+					<img src="img/m04.jpg" class="mi">
+					<div class="mi mf mf4">
+						<div class="serialnum">U</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊</div>
+					</div>
+				</div>
+				<div class="b3">
+					<img src="img/m03.png" class="mi">
+					<div class="mi mf mf3">
+						<div class="serialnum">F</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊</div>					
+					</div>
+					
+					<img src="img/m05.png" class="mi">
+					<div class="mi mf mf5">
+						<div class="serialnum">A</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>
+				    </div>				
+			    </div>
+			</div>
+			<div class="mfuright">
+				<div class="b2">
+					<img src="img/m06.jpeg" class="mi">
+					<div class="mi mf mf3">
+						<div class="serialnum">F</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊</div>
+					</div>
+					
+					<img src="img/m07.jpg" class="mi">
+					<div class="mi mf mf4">
+						<div class="serialnum">U</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>
+					</div>
+					
+					<img src="img/m08.jpg" class="mi">
+					<div class="mi mf mf2">
+						<div class="serialnum">U</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>
+					</div>
+				</div>
+				<div class="b3">
+					<img src="img/m09.jpg" class="mi">
+					<div class="mi mf mf2">
+						<div class="serialnum">J</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊</div>					
+					</div>
+					
+					<img src="img/mitori.png" class="mi">
+					<div class="mi mf mf5">
+						<div class="serialnum">A</div>
+						<div class="h1">这里是标题</div>
+						<div class="p">这里是内容啊这里是内容啊这里是内容啊这里是内容啊这里是内容啊这里是内容啊</div>					
+					</div>
+				</div>				
+			</div>
+			
+		</div>
+		<div class="mmore"><a href="#"> <div class="momid"><img src="img/arrow.png" id="arrow">点击查看更多</div></a></div>
+
+	</article>
+	<aside id="side">
+		<div id="ssearch">
+			<input type="search" id="inp" size="18px" placeholder="Keywords" onFocus="acti()" onBlur="gblur()">
+			<div id="go">GO</div>
+		</div>
+		<div class="srank">
+			<div class="srtit">人气排行榜</div>
+			<div class="scharts">
+				<div class="sch">
+					<div class="schn">1</div>
+					<div class="schbar">
+						<div class="sbarlef" id="barlef1"></div>
+					</div>
+					<div class="srkname">ui.tree</div>
+				</div>
+				<div class="sch">
+					<div class="schn">2</div>
+					<div class="schbar">
+						<div class="sbarlef" id="barlef2"></div>
+					</div>
+					<div class="srkname">util.trim</div>
+				</div>
+				<div class="sch">
+					<div class="schn">3</div>
+					<div class="schbar">
+						<div class="sbarlef" id="barlef3"></div>
+					</div>
+					<div class="srkname">app.todo</div>
+				</div>
+				<div class="sch">
+					<div class="schn">4</div>
+					<div class="schbar">
+						<div class="sbarlef" id="barlef4"></div>
+					</div>
+					<div class="srkname">ui.tab</div>
+				</div>
+				<div class="sch">
+					<div class="schn">5</div>
+					<div class="schbar">
+						<div class="sbarlef" id="barlef5"></div>
+					</div>
+					<div class="srkname">util.addClass</div>
+				</div>
+			</div>
+		</div>
+
+	</aside>
+</section>
+	<footer>
+	  <div class="fter_titl">
+			<a href="index.html" class="al">首页</a>
+			<a href="blog.html" class="al">文章</a>
+			<a href="galley.html" class="al">作品</a>
+			<a href="about.html" class="aa">关于</a>
+	  </div>
+	  <div id="fter_link">
+	  	<div class="fter_hd fir">
+			<ul>
+				<li class="ft">学习资料</li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a class="hov">Hover时样式</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+			</ul>
+		</div>
+
+		<div class="fter_hd sec">
+			<ul>
+				<li class="ft">友情链接</li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a class="hov">Hover时样式</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+			</ul>
+		</div>
+		<div class="fter_hd thi">
+			<ul>
+				<li class="ft">学习资料</li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a class="hov">Hover时样式</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+			</ul>  
+		</div>
+		<div class="fter_hd for">
+			<ul>
+				<li class="ft">友情链接</li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a class="hov">Hover时样式</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+			</ul>
+		</div>
+		<div class="fter_hd fif">
+			<ul>
+				<li class="ft">学习资料</li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a class="hov">Hover时样式</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+				<li class="fl"><a href="#">LINK</a></li>
+			</ul> 
+		</div>
+	  </div>
+	  <div id="copyr">版权信息</div>
+	  <div class="ficon"><a href="https://github.com/baidu-ife/ife/tree/master/2015_spring/task/task0001"><img id="ficon" src="img/github_icon.png"></a></div>
+  </footer>
+</body>
+</html>
