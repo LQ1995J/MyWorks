@@ -1202,7 +1202,7 @@ Test.prototype = {
 	}
 };
 
-// Resets the test setup. Useful for tests that modify the DOM.
+// Resets the test setup. Useful for tests that modify the 封装DOM库.
 /*
 DEPRECATED: Use multiple tests instead of resetting inside a test.
 Use testStart or testDone for custom cleanup.
@@ -1288,7 +1288,7 @@ function saveGlobal() {
 		for ( var key in global ) {
 			if ( hasOwn.call( global, key ) ) {
 
-				// in Opera sometimes DOM element ids show up here, ignore them
+				// in Opera sometimes 封装DOM库 element ids show up here, ignore them
 				if ( /^qunit-test-output/.test( key ) ) {
 					continue;
 				}

@@ -15,4 +15,4 @@ setInterval(function () {
     img[c].style.display = "block";
     // 让c号小圆点变红
     li[c].style.background = "#A10000";
-},1000)
+},1000);

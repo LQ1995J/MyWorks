@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>焦点轮播图_1</title>
+  <style>
+    *{
+      padding: 0px;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    #banner {
+      margin: 20px auto;
+      width: 1200px;
+      height: 535px;
+      overflow: hidden;
+      border: 3px solid #999;
+      position: relative;
+    }
+    #imglist {
+      width: 7200px;
+      height: 535px;
+    }
+    #imglist li {
+      float: left;
+    }
+    #iconlist{
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+    }
+    #iconlist li{
+      float: left;
+      width: 25px;
+      height: 25px;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 25px;
+      margin-left: 8px;
+      cursor: pointer;
+      color: #0D3349;
+    }
+  </style>
+
+</head>
+<body>
+<div id="banner">
+  <ul id="imglist">
+    <li><a href=""><img src="img/01.jpg" alt=""></a></li>
+    <li><a href=""><img src="img/02.jpg" alt=""></a></li>
+    <li><a href=""><img src="img/03.jpg" alt=""></a></li>
+    <li><a href=""><img src="img/04.jpg" alt=""></a></li>
+    <li><a href=""><img src="img/05.jpeg" alt=""></a></li>
+    <li><a href=""><img src="img/01.jpg" alt=""></a></li>
+  </ul>
+  <ul id="iconlist">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</div>
+<script src="carousel.js"></script>
+</body>
+</html>
